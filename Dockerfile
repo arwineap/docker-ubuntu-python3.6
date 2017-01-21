@@ -9,5 +9,6 @@ RUN apt-get update \
     && apt-get install -y python3.6 \
     && curl -o /tmp/get-pip.py "https://bootstrap.pypa.io/get-pip.py" \
     && python3.6 /tmp/get-pip.py \
-    && apt-get remove curl \
+    && apt-get remove -y curl \
+    && apt autoremove -y \
     && rm -rf /var/lib/apt/lists/*
